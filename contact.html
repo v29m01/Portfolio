@@ -26,10 +26,11 @@
             <div class="contact-container">
                 <!-- Contact Form -->
                 <div class="contact-form animate-slide">
-                                    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+            <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script type="text/javascript">
     // Initialize EmailJS with your Public Key (User ID)
     emailjs.init("fZPrShEqOtVhH2iNX");  // Replace with your actual Public Key (User ID)
+    emailjs.debug(true); // Enable debugging for more details in the console
 </script>
 
 <form id="contact-form" action="javascript:void(0);" method="POST">
@@ -53,7 +54,6 @@
     document.getElementById("contact-form").addEventListener("submit", function(event) {
         event.preventDefault();  // Prevent form default submission
 
-        // Collect form data
         var formData = {
             name: document.getElementById("name").value,
             email: document.getElementById("email").value,
@@ -71,6 +71,7 @@
             });
     });
 </script>
+
 
                     
                 </div>

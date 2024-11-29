@@ -4,8 +4,218 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaishnavi Mane - Portfolio</title>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(120deg, #f4f4f9, #e0e7ff);
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        .header {
+            background: #333;
+            padding: 1em 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav-bar ul li {
+            display: inline-block;
+            margin: 0 1.5em;
+        }
+
+        .nav-bar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .nav-bar ul li a:hover {
+            color: #61dafb;
+        }
+
+        /* Hamburger Menu */
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            color: white;
+            cursor: pointer;
+            margin-left: auto;
+            padding: 10px;
+        }
+
+        /* Intro Section */
+        .intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 90vh;
+            gap: 2em;
+            padding: 2em 1em;
+        }
+
+        .intro-text {
+            max-width: 500px;
+            text-align: left;
+            animation: fadeIn 2s ease;
+        }
+
+        .intro-text h1 {
+            font-size: 3rem;
+            color: #444;
+            line-height: 1.2;
+        }
+
+        .intro-text h1 span {
+            color: #ff6347;
+            font-weight: 700;
+        }
+
+        .intro-text p {
+            font-size: 1.2rem;
+            margin: 1em 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.8em 1.5em;
+            font-size: 1rem;
+            font-weight: bold;
+            background-color: #ff6347;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s, background-color 0.3s;
+            text-decoration: none;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.1);
+            background-color: #ff4500;
+        }
+
+        .intro-image img {
+            width: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            animation: bounce 3s infinite;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            /* Stack the navigation items vertically */
+            .nav-bar ul {
+                flex-direction: column;
+                align-items: center;
+                display: none; /* Hide menu by default */
+            }
+
+            .nav-bar ul li {
+                margin-bottom: 10px;
+            }
+
+            .nav-bar.active ul {
+                display: flex;
+            }
+
+            .hamburger {
+                display: block;
+                margin-left: auto;
+            }
+
+            .intro {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            .intro-text h1 {
+                font-size: 2rem;
+            }
+
+            .intro-text p {
+                font-size: 1rem;
+            }
+
+            .intro-image {
+                margin-top: 20px;
+                max-width: 100%;
+            }
+
+            /* Adjust the CTA button */
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .intro-text p {
+                font-size: 0.9rem;
+            }
+
+            .intro-text .cta-button {
+                padding: 10px 20px;
+                font-size: 1rem;
+            }
+
+            .intro-image img {
+                max-width: 100%;
+            }
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -38,6 +248,11 @@
         <p>© 2024 Vaishnavi Mane | All Rights Reserved</p>
     </footer>
 
-    <script src="assets/js/script.js"></script>
+    <script>
+        function toggleMenu() {
+            var navList = document.getElementById('nav-list');
+            navList.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

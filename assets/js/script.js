@@ -1,7 +1,14 @@
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio website loaded successfully!');
+// Toggle Navigation for Mobile View
+document.querySelector('.hamburger').addEventListener('click', () => {
+    document.querySelector('.nav-bar').classList.toggle('active');
 });
-function toggleMenu() {
-    var navList = document.getElementById('nav-list');
-    navList.classList.toggle('active');
-}
+
+// Smooth Scroll Animation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});

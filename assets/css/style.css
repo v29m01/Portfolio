@@ -1,0 +1,460 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(120deg, #f4f4f9, #e0e7ff);
+    color: #333;
+    overflow-x: hidden;
+}
+
+.header {
+    background: #333;
+    padding: 1em 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-bar ul li {
+    display: inline-block;
+    margin: 0 1.5em;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+    color: #61dafb;
+}
+
+/* Intro Section */
+.intro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 90vh;
+    gap: 2em;
+    padding: 2em 0;
+}
+
+.intro-text {
+    max-width: 500px;
+    text-align: left;
+    animation: fadeIn 2s ease;
+}
+
+.intro-text h1 {
+    font-size: 3rem;
+    color: #444;
+    line-height: 1.2;
+}
+
+.intro-text h1 span {
+    color: #ff6347;
+    font-weight: 700;
+}
+
+.intro-text p {
+    font-size: 1.2rem;
+    margin: 1em 0;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 0.8em 1.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: scale(1.1);
+    background-color: #ff4500;
+}
+
+.intro-image img {
+    width: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 3s infinite;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-text {
+    animation: fadeInText 1.5s ease forwards;
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.animate-fade {
+    opacity: 0;
+    animation: fade 2s ease forwards;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.delay {
+    animation-delay: 0.5s;
+}
+
+.animate-slide {
+    animation: slideIn 2s ease forwards;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* Portfolio css below */
+/* Portfolio Section */
+.portfolio {
+    padding: 2em;
+    text-align: center;
+    background: linear-gradient(120deg, #e0e7ff, #f4f4f9);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 0.5em;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2em;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.project-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+    transform: scale(1.1);
+}
+
+.project-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 1em;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    text-align: left;
+}
+
+.project-card:hover .project-info {
+    opacity: 1;
+    transform: translateY(0);
+}
+.project-description {
+    font-size: 0.9rem;
+    color: #f0f0f0;
+    margin-top: 0.5em;
+}
+/* Skills Section */
+.skills {
+    padding: 2em;
+    background: linear-gradient(120deg, #f4f4f9, #e0e7ff);
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.section-subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 2em;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skill-category {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1.5em;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.skill-title {
+    font-size: 1.8rem;
+    color: #444;
+    margin-bottom: 1em;
+    text-align: left;
+}
+
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1em;
+}
+
+.skill span {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.progress {
+    position: relative;
+    width: 70%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    border-radius: 5px;
+    animation: growBar 2s ease;
+}
+
+/* Progress Bar Colors */
+.html-bar { background: #f16529; width: 95%; }
+.css-bar { background: #2965f1; width: 90%; }
+.js-bar { background: #f7df1e; width: 85%; }
+.php-bar { background: #4f5b93; width: 80%; }
+.canva-bar { background: #00c4cc; width: 90%; }
+.smm-bar { background: #0077b5; width: 85%; }
+.meta-bar { background: #4267b2; width: 80%; }
+.google-bar { background: #ea4335; width: 75%; }
+.wordpress-bar { background: #21759b; width: 85%; }
+.php-app-bar { background: #4f5b93; width: 90%; }
+/* Animations */
+@keyframes growBar {
+    from {
+        width: 0;
+    }
+    to {
+        width: var(--bar-width);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Contact Section */
+.contact {
+    padding: 2em;
+    background: linear-gradient(120deg, #e0e7ff, #f4f4f9);
+    text-align: center;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form .form-group {
+    margin-bottom: 1.5em;
+    text-align: left;
+}
+
+.contact-form label {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 0.5em;
+    display: block;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #0077b5;
+}
+
+.social-media {
+    background: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+}
+
+.social-media h3 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1em;
+}
+
+.social-media ul {
+    list-style: none;
+    padding: 0;
+}
+
+.social-media ul li {
+    margin: 1em 0;
+}
+
+.social-media ul li a {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #444;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-media ul li a:hover {
+    color: #0077b5;
+}
+
+.social-media ul li a img {
+    width: 24px;
+    height: 24px;
+    margin-right: 0.5em;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-text {
+    animation: fadeIn 1s ease forwards;
+}
+
+.animate-fade {
+    opacity: 0;
+    animation: fadeIn 1.5s ease forwards;
+    animation-delay: 0.3s;
+}
+
+.animate-slide {
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+    animation-delay: 0.6s;
+}

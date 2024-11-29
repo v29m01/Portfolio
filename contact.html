@@ -30,7 +30,6 @@
 <script type="text/javascript">
     // Initialize EmailJS with your Public Key (User ID)
     emailjs.init("fZPrShEqOtVhH2iNX");  // Replace with your actual Public Key (User ID)
-    emailjs.debug(true); // Enable debugging for more details in the console
 </script>
 
 <form id="contact-form" action="javascript:void(0);" method="POST">
@@ -66,11 +65,12 @@
                 console.log("Email sent successfully", response);
                 alert("Your message has been sent successfully!");
             }, function(error) {
-                console.log("Failed to send email", error);
+                console.error("Failed to send email", error); // More detailed error logging
                 alert("Failed to send your message. Please try again later.");
             });
     });
 </script>
+
 
 
                     

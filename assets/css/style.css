@@ -60,7 +60,7 @@ body {
     text-align: center;
     min-height: 90vh;
     gap: 2em;
-    padding: 2em 0;
+    padding: 2em 1em;
 }
 
 .intro-text {
